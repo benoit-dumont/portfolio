@@ -51,7 +51,7 @@
                       weight="regular"
                       class="icon"
                     />
-                    <NuxtLink to="mailto:contact.dumont-benoit.fr">
+                    <NuxtLink to="mailto:contact@dumont-benoit.fr">
                       <span>Mail</span>
                       <PhosphorIconArrowSquareOut
                         :size="24"
