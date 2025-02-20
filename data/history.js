@@ -55,7 +55,7 @@ const history = [
     title: 'Développeur Web',
     location: 'Projet fictif',
     details:
-      "Création d'un API REST + Front d'un prétendu réseau social, dashboard pour modifier toutes les données",
+      "Création d'un API REST + Front d'un prétendu réseau social, dashboard pour modifier toutes les données.",
     startDate: '03/2022',
     endDate: '12/2021',
     learned: [
