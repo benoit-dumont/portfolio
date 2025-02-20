@@ -101,7 +101,7 @@
             </p>
             <div class="dl-button">
               <a
-                href="/portfolio/pdf/cv.pdf"
+                href="pdf/cv.pdf"
                 download="CV_Benoit_DUMONT.pdf"
                 _target="blank"
               >

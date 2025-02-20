@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/portfolio/',
+    baseURL: '/',
     buildAssetsDir: 'public/portfolio', // don't use "_" at the begining of the folder name to avoids nojkill conflict
   },
 
