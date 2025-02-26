@@ -8,7 +8,7 @@
           :key="name"
           class="skill-content"
         >
-          <img :src="`${icon}`" :alt="name" />
+          <img :src="`/portfolio/${icon}`" :alt="name" />
           <p>{{ name }}</p>
         </li>
       </ul>

@@ -11,7 +11,7 @@
       >
     </div>
     <div class="study-details">
-      <img :src="`${image}`" :alt="name" />
+      <img :src="`/portfolio/${image}`" :alt="name" />
       <div class="study-details-infos">
         <h1>{{ name }}</h1>
         <h2>{{ title }}</h2>

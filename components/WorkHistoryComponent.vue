@@ -14,7 +14,7 @@
       <div class="learned-container">
         <h2>Compétences apprises :</h2>
         <div v-for="item in learned" :key="item.name" class="learned">
-          <img :src="`${item.icon}`" :alt="item.name" />
+          <img :src="`/portfolio/${item.icon}`" :alt="item.name" />
           <p>{{ item.name }}</p>
         </div>
       </div>
