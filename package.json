@@ -12,8 +12,10 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "lint-eslint": "eslint . --fix",
+    "lint-ts": "tsc --noEmit --strict",
+    "lint-prettier": "prettier --write src/",
+    "lint": "npm-run-all lint-eslint lint-prettier lint-ts"
   },
   "dependencies": {
     "@phosphor-icons/vue": "^2.2.1",
