@@ -13,10 +13,7 @@
             :key="index"
           >
             <div class="stack-icon-wrapper">
-              <img
-                :src="resolveImg('../assets/icons/stack/', item)"
-                :alt="item"
-              />
+              <img :src="resolveImg('stack', item)" :alt="item" />
             </div>
             <p class="stack-name">{{ item }}</p>
           </div>
@@ -35,10 +32,7 @@
             :key="index"
           >
             <div class="stack-icon-wrapper">
-              <img
-                :src="resolveImg('../assets/icons/stack/', item)"
-                :alt="item"
-              />
+              <img :src="resolveImg('stack', item)" :alt="item" />
             </div>
             <p class="stack-name">{{ item }}</p>
           </div>
@@ -57,10 +51,7 @@
             :key="index"
           >
             <div class="stack-icon-wrapper">
-              <img
-                :src="resolveImg('../assets/icons/stack/', item)"
-                :alt="item"
-              />
+              <img :src="resolveImg('stack', item)" :alt="item" />
             </div>
             <p class="stack-name">{{ item }}</p>
           </div>
@@ -73,7 +64,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import projectData from '../assets/data/projectInfos.json'
-import type { Stack, StacksByType, StackTypes } from '@/types'
+import type { Stack, StacksByType, StackTypes } from '../types'
 
 import { useResolveImg } from '../composables/useResolveImg'
 const { resolveImg } = useResolveImg()

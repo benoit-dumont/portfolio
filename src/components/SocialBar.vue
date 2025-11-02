@@ -29,13 +29,9 @@
 <script setup lang="ts">
 import { PhLinkedinLogo } from '@phosphor-icons/vue'
 
-const handleMail = () => {
-  console.log('LinkedIn clicked')
-}
+const handleMail = () => {}
 
-const handleMessage = () => {
-  console.log('Message clicked')
-}
+const handleMessage = () => {}
 </script>
 
 <style scoped>

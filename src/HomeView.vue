@@ -167,7 +167,6 @@ const handleWheelNavigation = (
 
   // Section 1 -> Section 2
   if (scrollPosition < section2Start && delta > 0) {
-    console.log('✅ Transition 1 -> 2')
     smoothScrollTo(section2Start, SCROLL_DURATION)
     return true
   }
@@ -178,7 +177,6 @@ const handleWheelNavigation = (
     scrollPosition < section2Start + SCROLL_TOLERANCE &&
     delta < 0
   ) {
-    console.log('✅ Transition 2 -> 1')
     smoothScrollTo(0, SCROLL_DURATION)
     return true
   }
@@ -189,7 +187,6 @@ const handleWheelNavigation = (
     scrollPosition < section2End &&
     delta > 0
   ) {
-    console.log('✅ Transition 2 -> 3')
     smoothScrollTo(section3Start, SCROLL_DURATION)
     return true
   }
@@ -204,7 +201,6 @@ const handleWheelNavigation = (
       ? horizontalScrollTrigger.progress
       : 0
     if (progress < 0.1) {
-      console.log('✅ Transition 3 -> 2')
       smoothScrollTo(section2Start, SCROLL_DURATION)
       return true
     }
@@ -216,7 +212,6 @@ const handleWheelNavigation = (
       ? horizontalScrollTrigger.progress
       : 0
     if (progress > 0.9) {
-      console.log('✅ Transition 3 -> 4')
       smoothScrollTo(section4Start, SCROLL_DURATION)
       return true
     }

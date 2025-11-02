@@ -8,7 +8,7 @@
       :key="title"
     >
       <div class="project-background">
-        <img :src="resolveImg('../assets/img/test/', picture)" :alt="title" />
+        <img :src="resolveImg('img', picture)" :alt="title" />
         <div class="gradient-overlay"></div>
       </div>
 

@@ -14,10 +14,7 @@
                 : '0',
         }"
       >
-        <img
-          :src="resolveImg('../assets/icons/stack/', item.name)"
-          :alt="item.name"
-        />
+        <img :src="resolveImg('stack', item.name)" :alt="item.name" />
       </div>
 
       <div
@@ -33,10 +30,7 @@
       <transition name="fade">
         <div v-if="showAll" class="extra-tags">
           <div class="tag" v-for="item in hiddenStack" :key="'extra-' + item">
-            <img
-              :src="resolveImg('../assets/icons/stack/', item.name)"
-              :alt="item.name"
-            />
+            <img :src="resolveImg('stack', item.name)" :alt="item.name" />
           </div>
         </div>
       </transition>
