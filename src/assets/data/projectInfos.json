@@ -74,7 +74,7 @@
       { "name": "ESLINT", "type": "Tools" }
     ],
     "context": "Formation",
-    "recap": "Partie Backend du septième et dernier projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "recap": "Partie Backend du septième et dernier projet issu de la formation 'Développeur Web' d'OpenClassrooms ",
     "githubLink": "https://github.com/benoit-dumont/OC-DW-7-Back"
   },
   {
