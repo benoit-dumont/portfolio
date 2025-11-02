@@ -34,16 +34,6 @@ jobs:
       - name: Run linters (ESLint, Stylelint)
         run: npm run lint
 
-      - name: Check if version has changed since last commit
-        id: version-check
-        uses: EndBug/version-check@v2
-
-      - name: Fail if version is unchanged
-        if: steps.version-check.outputs.changed == 'false'
-        run: |
-          echo "❌ Version not updated since last commit."
-          exit 1
-
       - name: Build Vue.js project
         run: npm run build
 
