@@ -1,0 +1,243 @@
+[
+  {
+    "title": "GBAF",
+    "picture": "test.png",
+    "stack": [
+      { "name": "HTML", "type": "Front" },
+      { "name": "CSS", "type": "Front" },
+      { "name": "PHP", "type": "Back" },
+      { "name": "MYSQL", "type": "Back" }
+    ],
+    "context": "Formation",
+    "recap": "Dernier projet issu de la formation 'Prep'FullStack' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-3"
+  },
+  {
+    "title": "Reservia",
+    "picture": "test.png",
+    "stack": [
+      { "name": "HTML", "type": "Front" },
+      { "name": "CSS", "type": "Front" }
+    ],
+    "context": "Formation",
+    "recap": "Second projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-2"
+  },
+  {
+    "title": "Oh My Food",
+    "picture": "test.png",
+    "stack": [
+      { "name": "HTML", "type": "Front" },
+      { "name": "CSS", "type": "Front" },
+      { "name": "SASS", "type": "Front" }
+    ],
+    "context": "Formation",
+    "recap": "Troisième projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-3"
+  },
+  {
+    "title": "Orinoco",
+    "picture": "test.png",
+    "stack": [
+      { "name": "HTML", "type": "Front" },
+      { "name": "CSS", "type": "Front" },
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "SASS", "type": "Front" }
+    ],
+    "context": "Formation",
+    "recap": "Cinquième projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-5"
+  },
+  {
+    "title": "Piiquante",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "NODEJS", "type": "Back" },
+      { "name": "EXPRESS", "type": "Back" },
+      { "name": "MONGODB", "type": "Back" },
+      { "name": "OPENAPI", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Sixième projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-6"
+  },
+  {
+    "title": "Groupomania (Backend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "NODEJS", "type": "Back" },
+      { "name": "EXPRESS", "type": "Back" },
+      { "name": "MYSQL", "type": "Back" },
+      { "name": "OPENAPI", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Partie Backend du septième et dernier projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-7-Back"
+  },
+  {
+    "title": "Groupomania (Frontend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "VUEJS", "type": "Front" },
+      { "name": "SASS", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Partie Frontend du septième et dernier projet issu de la formation 'Développeur Web' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DW-7-Front"
+  },
+  {
+    "title": "Fisheye",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Sixième projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-6"
+  },
+  {
+    "title": "Les petits plats",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Septième projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-7"
+  },
+  {
+    "title": "Kasa",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "REACT", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Onzième projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-11"
+  },
+  {
+    "title": "Sportsee",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "REACT", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Douzième projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-12"
+  },
+  {
+    "title": "ArgentBank",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "REACT", "type": "Front" },
+      { "name": "REDUX", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Treizième projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-13"
+  },
+  {
+    "title": "ReactModal",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "TYPESCRIPT", "type": "Front" },
+      { "name": "STORYBOOK", "type": "Tools" },
+      { "name": "REACT", "type": "Front" },
+      { "name": "REDUX", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Formation",
+    "recap": "Quatorzième et dernier projet issu de la formation 'Développeur d'applications JavaScript/React (DAJR)' d'OpenClassrooms",
+    "githubLink": "https://github.com/benoit-dumont/OC-DAJR-14"
+  },
+  {
+    "title": "FindingJobs (backend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" },
+      { "name": "EXPRESS", "type": "Back" },
+      { "name": "PUPPETEER", "type": "Back" },
+      { "name": "MYSQL", "type": "Back" }
+    ],
+    "context": "Perso",
+    "recap": "Projet de scraper avec Puppeteer & Electron (projet abandonné)",
+    "githubLink": ""
+  },
+  {
+    "title": "FindingJobs (frontend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "SASS", "type": "Front" },
+      { "name": "ELECTRON", "type": "Front" },
+      { "name": "VUEJS", "type": "Front" },
+      { "name": "ELECTRON", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Perso",
+    "recap": "Frontend pour afficher les données du projet de scraper avec Puppeteer & Electron (projet abandonné)",
+    "githubLink": "X"
+  },
+  {
+    "title": "Contakt (backend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "EXPRESS", "type": "Back" },
+      { "name": "MYSQL", "type": "Back" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Alternance",
+    "recap": "Backend pour l'outil d'impact environnemental",
+    "githubLink": "X"
+  },
+  {
+    "title": "Contakt (frontend)",
+    "picture": "test.png",
+    "stack": [
+      { "name": "JAVASCRIPT", "type": "Front" },
+      { "name": "ELECTRON", "type": "Front" },
+      { "name": "VUEJS", "type": "Front" },
+      { "name": "STYLELINT", "type": "Tools" },
+      { "name": "PRETTIER", "type": "Tools" },
+      { "name": "ESLINT", "type": "Tools" }
+    ],
+    "context": "Alternance",
+    "recap": "Frontend pour l'outil d'impact environnemental",
+    "githubLink": "X"
+  }
+]
