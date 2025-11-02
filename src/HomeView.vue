@@ -52,9 +52,9 @@
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useGSAP } from './plugins/gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ProjectList from '@/components/ProjectList.vue'
-import StackList from '@/components/StackList.vue'
-import SocialBar from '@/components/SocialBar.vue'
+import ProjectList from './components/ProjectList.vue'
+import StackList from './components/StackList.vue'
+import SocialBar from './components/SocialBar.vue'
 
 // ==================== Configuration ====================
 const SCROLL_DURATION = 600
