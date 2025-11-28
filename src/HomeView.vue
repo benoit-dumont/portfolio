@@ -21,8 +21,7 @@
     </section>
 
     <section class="section-4">
-      <h1>Section 4</h1>
-      <p>Fin du portfolio</p>
+      <ContactForm />
     </section>
 
     <button
@@ -55,6 +54,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectList from './components/ProjectList.vue'
 import StackList from './components/StackList.vue'
 import SocialBar from './components/SocialBar.vue'
+import ContactForm from './components/ContactForm.vue'
 
 // ==================== Configuration ====================
 const SCROLL_DURATION = 600
