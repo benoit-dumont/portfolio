@@ -130,6 +130,20 @@
           >
         </div>
 
+        <div class="captcha-wrapper">
+          <VueHcaptcha
+            ref="hcaptchaRef"
+            :sitekey="HCAPTCHA_CONFIG.siteKey"
+            @verify="onCaptchaVerify"
+            @expire="onCaptchaExpire"
+            @error="onCaptchaError"
+            theme="dark"
+          />
+          <span v-if="captchaError" class="error-message captcha-error">
+            {{ captchaError }}
+          </span>
+        </div>
+
         <button
           type="submit"
           class="submit-btn"
@@ -149,21 +163,6 @@
         <div v-if="sendError" class="error-message-box">
           <span class="error-icon">⚠️</span>
           {{ sendError }}
-        </div>
-
-        <!-- hCaptcha -->
-        <div class="captcha-wrapper">
-          <VueHcaptcha
-            ref="hcaptchaRef"
-            :sitekey="HCAPTCHA_CONFIG.siteKey"
-            @verify="onCaptchaVerify"
-            @expire="onCaptchaExpire"
-            @error="onCaptchaError"
-            theme="dark"
-          />
-          <span v-if="captchaError" class="error-message captcha-error">
-            {{ captchaError }}
-          </span>
         </div>
       </form>
     </div>
