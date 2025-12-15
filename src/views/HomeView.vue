@@ -1,26 +1,20 @@
 <template>
   <div ref="containerRef" class="container">
     <SocialBar />
-    <section class="section-1">
-      <h1>Section 1</h1>
-      <p>Début du portfolio</p>
-      <div class="scroll-indicator">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-        <span class="arrow">&#x2193;</span>
-      </div>
+    <section id="greetings" class="section-1">
+      <SummaryInfos />
     </section>
 
-    <section class="section-2">
+    <section id="stacks" class="section-2">
       <StackList />
+      <EducationBar />
     </section>
 
-    <section ref="section3Ref" class="section-3">
+    <section id="projects" ref="section3Ref" class="section-3">
       <ProjectList />
     </section>
 
-    <section class="section-4">
+    <section id="contact" class="section-4">
       <ContactForm />
     </section>
 
@@ -49,12 +43,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import { useGSAP } from './plugins/gsap'
+import { useGSAP } from '../plugins/gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ProjectList from './components/ProjectList.vue'
-import StackList from './components/StackList.vue'
-import SocialBar from './components/SocialBar.vue'
-import ContactForm from './components/ContactForm.vue'
+import ProjectList from '../components/ProjectList.vue'
+import StackList from '../components/StackList.vue'
+import SocialBar from '../components/SocialBar.vue'
+import ContactForm from '../components/ContactForm.vue'
+import SummaryInfos from '../components/SummaryInfos.vue'
+import EducationBar from '../components/EducationBar.vue'
 
 // ==================== Configuration ====================
 const SCROLL_DURATION = 600
@@ -329,61 +325,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.scroll-indicator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2vh 0;
-  cursor: default;
-  animation: fadeInUp 3s ease-in-out;
-}
-
-.mouse {
-  width: 28px;
-  height: 45px;
-  border: 2px solid #a78bfa;
-  border-radius: 20px;
-  position: relative;
-}
-
-.wheel {
-  width: 6px;
-  height: 6px;
-  background: #a78bfa;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: wheelMove 1.6s linear infinite;
-}
-
-.arrow {
-  margin-top: 10px;
-  font-size: 1.4rem;
-  color: #a78bfa;
-  animation: bounce 1.6s infinite;
-}
-
-@keyframes wheelMove {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, 12px);
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -393,22 +334,6 @@ onBeforeUnmount(() => {
     opacity: 1;
     transform: translateY(0);
   }
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -422,7 +347,6 @@ html {
 
 section {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -432,11 +356,13 @@ section {
 .section-1 {
   background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
   color: white;
+  min-height: 100vh;
 }
 
 .section-2 {
   background: linear-gradient(135deg, #c084fc 0%, #a78bfa 100%);
   color: white;
+  min-height: 100vh;
 }
 
 .section-3 {
@@ -496,26 +422,5 @@ p {
 
 .scroll-to-top svg {
   animation: bounce 2s infinite;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
 }
 </style>
