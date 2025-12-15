@@ -1,5 +1,6 @@
 <template>
   <div class="stack-container">
+    <h1 class="title">STACK</h1>
     <div class="stack-grid">
       <div class="stack-category">
         <div class="category-header">
@@ -103,12 +104,23 @@ const toolsStacks = ref(stacksByType.Tools)
 </script>
 
 <style scoped>
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+  padding-bottom: 2vh;
+}
+
 .stack-container {
-  min-height: 100vh;
   background: var(--main-background-color);
-  padding: 4rem;
+  padding: 4rem 4rem 0 4rem;
   position: relative;
   overflow: hidden;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 .stack-grid {
@@ -267,6 +279,12 @@ const toolsStacks = ref(stacksByType.Tools)
 
   .stack-items {
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
   }
 }
 </style>

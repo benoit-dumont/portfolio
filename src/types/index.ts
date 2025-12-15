@@ -1,3 +1,4 @@
 export * from './Stack'
 export * from './Project'
 export * from './Contact'
+export * from './Education'
