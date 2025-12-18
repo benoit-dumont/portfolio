@@ -1,6 +1,6 @@
 <template>
   <div ref="containerRef" class="container">
-    <SocialBar />
+    <SocialBurger />
     <section id="greetings" class="section-1">
       <SummaryInfos />
     </section>
@@ -45,9 +45,9 @@
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useGSAP } from '../plugins/gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SocialBurger from '../components/SocialBurger.vue'
 import ProjectList from '../components/ProjectList.vue'
 import StackList from '../components/StackList.vue'
-import SocialBar from '../components/SocialBar.vue'
 import ContactForm from '../components/ContactForm.vue'
 import SummaryInfos from '../components/SummaryInfos.vue'
 import EducationBar from '../components/EducationBar.vue'
@@ -422,5 +422,30 @@ p {
 
 .scroll-to-top svg {
   animation: bounce 2s infinite;
+}
+.linkedin {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.linkedin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(167, 139, 250, 0.6);
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
 }
 </style>
