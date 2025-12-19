@@ -71,6 +71,13 @@ const showScrollTop = ref(false)
 // ==================== State ====================
 let isScrolling = false
 let horizontalScrollTrigger: ScrollTrigger
+let resizeTimeout: number | null = null
+
+// ==================== Gestion de la hauteur viewport ====================
+const updateViewportHeight = () => {
+  const vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
 
 // ==================== Utilitaires ====================
 const easeInOutQuad = (t: number): number => {
@@ -81,9 +88,18 @@ const getSlides = (): HTMLElement[] => {
   return gsap.utils.toArray('.horizontal-slide') as HTMLElement[]
 }
 
+const getViewportHeight = (): number => {
+  return window.innerHeight
+}
+
 const calculateSectionPositions = () => {
-  const section1Height = window.innerHeight
-  const section2Height = window.innerHeight
+  const viewportHeight = getViewportHeight()
+
+  const section1 = document.getElementById('greetings')
+  const section2 = document.getElementById('stacks')
+
+  const section1Height = section1?.offsetHeight || viewportHeight
+  const section2Height = section2?.offsetHeight || viewportHeight
   const section2Start = section1Height
   const section2End = section2Start + section2Height
   const section3Start = section2End
@@ -96,7 +112,7 @@ const calculateSectionPositions = () => {
 
   const section3Height = horizontalScrollLength
   const section3End = section3Start + section3Height
-  const section4Start = section3End + window.innerHeight
+  const section4Start = section3End + viewportHeight
 
   return {
     section1Height,
@@ -302,17 +318,36 @@ const initHorizontalScroll = () => {
   ScrollTrigger.refresh()
 }
 
+// ==================== Gestion du Resize ====================
+const handleResize = () => {
+  if (resizeTimeout) {
+    clearTimeout(resizeTimeout)
+  }
+
+  resizeTimeout = window.setTimeout(() => {
+    updateViewportHeight()
+    ScrollTrigger.refresh()
+    initHorizontalScroll()
+  }, 150)
+}
+
 // ==================== Lifecycle Hooks ====================
 onMounted(async () => {
+  updateViewportHeight()
+
   await nextTick()
 
   setTimeout(initHorizontalScroll, GSAP_INIT_DELAY)
 
   window.addEventListener('scroll', handleScroll)
   window.addEventListener('wheel', handleWheel, { passive: false })
-  window.addEventListener('resize', () => {
-    ScrollTrigger.refresh()
-    initHorizontalScroll()
+  window.addEventListener('resize', handleResize)
+
+  window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+      updateViewportHeight()
+      handleResize()
+    }, 100)
   })
 })
 
@@ -320,7 +355,12 @@ onBeforeUnmount(() => {
   ScrollTrigger.killAll()
   window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('wheel', handleWheel)
-  window.removeEventListener('resize', () => ScrollTrigger.refresh())
+  window.removeEventListener('resize', handleResize)
+  window.removeEventListener('orientationchange', handleResize)
+
+  if (resizeTimeout) {
+    clearTimeout(resizeTimeout)
+  }
 })
 </script>
 
@@ -351,42 +391,44 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .section-1 {
   background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
   color: white;
-  min-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .section-2 {
   background: linear-gradient(135deg, #c084fc 0%, #a78bfa 100%);
   color: white;
-  min-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .section-3 {
   background: #1a1a2e;
   overflow: hidden;
   padding: 0;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
 }
 
 .section-4 {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   color: white;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: bold;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   opacity: 0.9;
 }
 
@@ -423,6 +465,7 @@ p {
 .scroll-to-top svg {
   animation: bounce 2s infinite;
 }
+
 .linkedin {
   position: fixed;
   top: 2rem;
@@ -447,5 +490,44 @@ p {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(167, 139, 250, 0.6);
   background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+}
+
+@media (max-width: 1024px) {
+  .stack-container {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-2 {
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: auto;
+    overflow-y: auto;
+  }
+  .scroll-to-top,
+  .linkedin {
+    width: 3rem;
+    height: 3rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .linkedin {
+    top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top,
+  .linkedin {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  section {
+    min-height: -webkit-fill-available;
+  }
 }
 </style>

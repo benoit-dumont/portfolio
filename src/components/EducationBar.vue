@@ -185,16 +185,48 @@ const educations = ref<Education[]>([
   }
 
   .timeline {
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .timeline-line {
+    top: 0;
+    left: 2.5rem;
+    transform: none;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      #a78bfa 5%,
+      #a78bfa 95%,
+      transparent 100%
+    );
   }
 
   .timeline-item {
-    min-width: 240px;
-    max-width: 280px;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-left: 2.6vh;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    margin-bottom: 0;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
   }
 
   .timeline-content {
     padding: 1rem;
+    flex: 1;
   }
 }
 </style>

@@ -244,7 +244,8 @@ import Tag from './ProjectTag.vue'
   }
 
   .project-bottom-left {
-    bottom: 2rem;
+    bottom: initial;
+    top: 7rem;
     left: 2rem;
   }
 }
@@ -257,6 +258,12 @@ import Tag from './ProjectTag.vue'
   .cta-button {
     width: 60px;
     height: 60px;
+  }
+}
+
+@media (max-width: 550px) {
+  .slide-indicators {
+    display: none;
   }
 }
 </style>

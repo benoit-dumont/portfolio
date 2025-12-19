@@ -340,6 +340,7 @@ onUnmounted(() => clearInterval(intervalId))
   min-height: 80px;
   position: relative;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
 .prefix {
@@ -356,7 +357,6 @@ onUnmounted(() => clearInterval(intervalId))
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.6));
   animation: slideDown 3s ease-in-out;
-  white-space: nowrap;
 }
 
 @keyframes slideDown {

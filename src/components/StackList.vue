@@ -105,7 +105,7 @@ const toolsStacks = ref(stacksByType.Tools)
 
 <style scoped>
 .title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 700;
   color: var(--main-color);
   margin: 0 0 0.5rem 0;
@@ -116,28 +116,53 @@ const toolsStacks = ref(stacksByType.Tools)
 
 .stack-container {
   background: var(--main-background-color);
-  padding: 4rem 4rem 0 4rem;
+  padding: clamp(2rem, 5vw, 4rem);
   position: relative;
   overflow: hidden;
   flex-grow: 1;
   flex-basis: 0;
+  width: 100%;
 }
 
 .stack-grid {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
+  align-items: stretch;
+}
+
+@media (max-width: 1500px) {
+  .stack-container {
+    overflow: visible;
+  }
+
+  .stack-category {
+    width: 100%;
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* Passage en flex vertical si l’écran devient trop petit */
+@media (max-width: 480px) {
+  .stack-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .stack-category {
   backdrop-filter: blur(20px);
   background: var(--main-container-background-color);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -148,8 +173,8 @@ const toolsStacks = ref(stacksByType.Tools)
 .category-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .header-line {
@@ -171,8 +196,8 @@ const toolsStacks = ref(stacksByType.Tools)
 .stack-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: flex-start;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  justify-content: center;
 }
 
 .stack-item {
@@ -188,8 +213,8 @@ const toolsStacks = ref(stacksByType.Tools)
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  flex: 0 0 auto;
-  width: 95px;
+  flex: 0 1 auto;
+  width: clamp(90px, 8vw, 120px);
 }
 
 .stack-item::before {
@@ -217,8 +242,8 @@ const toolsStacks = ref(stacksByType.Tools)
 }
 
 .stack-icon-wrapper {
-  width: 45px;
-  height: 45px;
+  width: clamp(35px, 6vw, 45px);
+  height: clamp(35px, 6vw, 45px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,8 +258,8 @@ const toolsStacks = ref(stacksByType.Tools)
 }
 
 .stack-icon-wrapper img {
-  width: 32px;
-  height: 32px;
+  width: clamp(25px, 5vw, 32px);
+  height: clamp(25px, 5vw, 32px);
   object-fit: contain;
   filter: brightness(0.9) saturate(0.8);
   transition: filter 0.3s ease;
@@ -245,7 +270,7 @@ const toolsStacks = ref(stacksByType.Tools)
 }
 
 .stack-name {
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.02em;
@@ -260,25 +285,10 @@ const toolsStacks = ref(stacksByType.Tools)
   color: rgba(167, 139, 250, 1);
 }
 
+/* Media Queries pour petits écrans */
 @media (max-width: 768px) {
   .stack-container {
     padding: 2rem;
-  }
-
-  .stack-grid {
-    gap: 1.5rem;
-  }
-
-  .stack-category {
-    padding: 1rem;
-  }
-
-  .category-header {
-    margin-bottom: 1rem;
-  }
-
-  .stack-items {
-    gap: 0.5rem;
   }
 }
 
